@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ChakraProvider } from '@chakra-ui/react'
+import { BrowserRouter } from "react-router-dom";
 import {
   Mainnet,
   DAppProvider,
@@ -21,11 +22,13 @@ const config: Config = {
 
 ReactDOM.render(
   <React.StrictMode>
-    <DAppProvider config={config}>
-      <ChakraProvider>
-        <App />
-      </ChakraProvider>
-    </DAppProvider>
+    <BrowserRouter>
+      <DAppProvider config={config}>
+        <ChakraProvider>
+          <App />
+        </ChakraProvider>
+      </DAppProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

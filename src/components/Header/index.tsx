@@ -17,7 +17,7 @@ const Header = () => (
                     // color={useColorModeValue('gray.600', 'white')}
                     minH={'60px'}
                     py={{ base: 2 }}
-                    px={{ base: 4 }}
+                    // px={{ base: 4 }}
                     // borderColor={useColorModeValue('gray.200', 'gray.900')}
                     align={'center'}
                 >
