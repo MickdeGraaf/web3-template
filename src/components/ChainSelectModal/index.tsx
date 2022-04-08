@@ -1,6 +1,6 @@
 import { Box, Button, Grid, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack } from "@chakra-ui/react";
 import { Chain, useEthers } from "@usedapp/core";
-import ChainSelectOption from "components/ChainSelectButton/ChainSelectOption";
+import ChainSelectOption from "components/ChainSelectModal/ChainSelectOption";
 import { RPC_URLS, SUPPORTED_CHAINS } from "config/chains";
 interface AccountModalProps {
     open: boolean;

@@ -24,7 +24,7 @@ const ChainSelectOption = ({chain, onClick}: ChainSelectOptionProps) => {
                 justify={"flex-end"}
             >
                 {!imageError ?
-                    <Image onError={onImageError} boxSize={"7"} src={CHAIN_ICONS[chain.chainId]} />
+                    <Image onError={onImageError} boxSize={"7"} borderRadius='full' src={CHAIN_ICONS[chain.chainId]} />
                     :
                     <Text fontSize={"28px"}>🌕</Text>
                 }

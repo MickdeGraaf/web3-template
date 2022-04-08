@@ -21,7 +21,7 @@ const ChainSelectButton = () => {
     return (
         <>
             <Button onClick={openModal}>
-                <Image boxSize={"7"} src={CHAIN_ICONS[chainId]} />
+                <Image borderRadius='full' boxSize={"5"} src={CHAIN_ICONS[chainId]} />
             </Button>
             <ChainSelectModal open={modalOpen} setShowModal={setModalOpen} />
         </>
