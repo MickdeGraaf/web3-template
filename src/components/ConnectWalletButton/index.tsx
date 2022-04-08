@@ -1,5 +1,5 @@
 import { Button, ButtonProps, Stack, Text } from "@chakra-ui/react";
-import { useEthers, useLookupAddress } from "@usedapp/core";
+import { shortenAddress, useEthers, useLookupAddress } from "@usedapp/core";
 import WalletConnectProvider from '@walletconnect/web3-provider'
 import { useState } from "react";
 import Web3Modal from "web3modal";
@@ -56,7 +56,7 @@ const ConnectWalletButton = (props: ButtonProps) => {
                     justify={"flex-end"}
                 >
                     <Blockies size={8} scale={3} seed={account.toLowerCase()} />
-                    <Text>{ens ?? account}</Text>
+                    <Text>{ens ?? shortenAddress(account)}</Text>
                 </Stack> 
             </Button>
          ) : (
