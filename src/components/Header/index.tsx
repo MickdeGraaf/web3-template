@@ -38,7 +38,7 @@ const Header = () => (
                         </Button>
                         <ConnectWalletButton
                             fontWeight={400}   
-                        />
+                        >Connect Wallet</ConnectWalletButton>
                     </Stack>
                 {/* </Box> */}
                 </Flex>
