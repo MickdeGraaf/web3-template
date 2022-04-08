@@ -6,6 +6,7 @@ import {
     Stack,
     Text
 } from "@chakra-ui/react";
+import ChainSelectButton from "components/ChainSelectButton";
 import ConnectWalletButton from "../ConnectWalletButton";
 
 
@@ -31,11 +32,7 @@ const Header = () => (
                         flex={{ base: 1, md: 0 }}
                         justify={"flex-end"}
                     >
-                        <Button
-                            fontWeight={400}
-                        >
-                            Other Button
-                        </Button>
+                        <ChainSelectButton />
                         <ConnectWalletButton
                             fontWeight={400}   
                         >Connect Wallet</ConnectWalletButton>
