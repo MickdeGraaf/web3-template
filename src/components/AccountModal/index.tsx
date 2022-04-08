@@ -1,4 +1,5 @@
 import { Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay } from "@chakra-ui/react";
+import { useEthers } from "@usedapp/core";
 
 interface AccountModalProps {
     open: boolean;
@@ -6,9 +7,15 @@ interface AccountModalProps {
 }
 
 const AccountModal = ({open, setShowModal}: AccountModalProps) => {
+    const { account, activate, deactivate } = useEthers();
 
     const onClose = () => {
         setShowModal(false);
+    }
+
+    const handleDisconnect = () => {
+        onClose();
+        deactivate();
     }
 
     return (
@@ -22,10 +29,7 @@ const AccountModal = ({open, setShowModal}: AccountModalProps) => {
             </ModalBody>
 
             <ModalFooter>
-                {/* <Button colorScheme='blue' mr={3} onClick={onClose}>
-                Close
-                </Button>
-                <Button variant='ghost'>Secondary Action</Button> */}
+                <Button onClick={handleDisconnect}>Disconnect</Button>
             </ModalFooter>
             </ModalContent>
         </Modal>
