@@ -1,9 +1,10 @@
-import { Button, ButtonProps } from "@chakra-ui/react";
+import { Button, ButtonProps, Stack, Text } from "@chakra-ui/react";
 import { useEthers, useLookupAddress } from "@usedapp/core";
 import WalletConnectProvider from '@walletconnect/web3-provider'
 import { useState } from "react";
 import Web3Modal from "web3modal";
 import AccountModal from "../AccountModal";
+import Blockies from 'react-blockies';
 
 const ConnectWalletButton = (props: ButtonProps) => {
     const { account, activate, deactivate } = useEthers();
@@ -47,7 +48,17 @@ const ConnectWalletButton = (props: ButtonProps) => {
     return(
         <>
         {account ? ( 
-            <Button {...props} onClick={openModal} > {ens ?? account} </Button>
+            <Button {...props} onClick={openModal} > 
+                <Stack
+                    direction={"row"}
+                    // flex={{ base: 1, md: 0 }}
+                    align={"center"}
+                    justify={"flex-end"}
+                >
+                    <Blockies size={8} scale={3} seed={account.toLowerCase()} />
+                    <Text>{ens ?? account}</Text>
+                </Stack> 
+            </Button>
          ) : (
             <Button {...props} onClick={activateProvider} />
         )}
